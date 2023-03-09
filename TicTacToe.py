@@ -42,3 +42,12 @@ def full_board_check(board):
 		if i == ' ':
 			return False
 	return True
+
+def player_choice(board):
+	player_position = ' '
+	while player_position not in range(1,10):
+		player_position = input('Please choose your position: ')
+	if space_check(board,player_position) == True:
+		return player_position
+	else:
+		return player_choice(board)
