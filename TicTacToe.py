@@ -35,7 +35,7 @@ def choose_first():
 def space_check(board, position):
 	return board[position] == ' '
 
-# test_board = ['#','X',' ','X','O','X','O','X','O','X']
+test_board = ['#','X',' ','X','O','X','O','X','O','X']
 
 def full_board_check(board):
 	for i in board:
@@ -44,10 +44,16 @@ def full_board_check(board):
 	return True
 
 def player_choice(board):
-	player_position = ' '
-	while player_position not in range(1,10):
-		player_position = input('Please choose your position: ')
-	if space_check(board,player_position) == True:
-		return player_position
-	else:
-		return player_choice(board)
+	position = 0
+	while position not in range(1,10) or not space_check(board, position):
+		position = int(input('Please choose your position (1-9): '))
+	return position
+
+def replay():
+	play = ' '
+	while play != 'Y' and play != 'N':
+		play = input('Do you want to play the game again?(Y/N) ').upper()
+	if play == 'Y':
+		return True
+	elif play == 'N':
+		return False
