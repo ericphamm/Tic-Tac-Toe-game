@@ -1,3 +1,5 @@
+import random
+
 def display_board(board):
 	print('\n'*100)
 	print(board[7] + ' | ' + board[8]+ ' | ' + board[9])
@@ -22,4 +24,10 @@ def win_check(board, mark):
 	if (board[1] == board[2] == board[3] == mark) or (board[4] == board[5] == board[6] == mark) or (board[7] == board[8] == board[9] == mark) or (board[1] == board[5] == board[9] == mark) or (board[3] == board[5] == board[7] == mark) or (board[1] == board[4] == board[7] == mark) or (board[2] == board[5] == board[8] == mark) or (board[3] == board[6] == board[9] == mark):
 		return True
 
+def choose_first():
+	number = random.randit(0,1)
 
+	if number == 0:
+		return "Player 1"
+	else:
+		return "Player 2"
