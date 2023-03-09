@@ -34,3 +34,11 @@ def choose_first():
 
 def space_check(board, position):
 	return board[position] == ' '
+
+# test_board = ['#','X',' ','X','O','X','O','X','O','X']
+
+def full_board_check(board):
+	for i in board:
+		if i == ' ':
+			return False
+	return True
