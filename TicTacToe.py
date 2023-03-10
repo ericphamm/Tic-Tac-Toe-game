@@ -13,8 +13,10 @@ def player_input():
 	while marker != 'X' and marker != 'O':
 		marker = input('Player1: Choose X or O: ').upper()
 	if marker == 'X':
+		print("Player 1's marker is: X and Player 2's marker is: O")
 		return ('X','O')
 	else:
+		print("Player 1's marker is: O and Player 2's marker is: X")
 		return ('O','X')
 	
 def place_marker(board, marker, position):
@@ -66,9 +68,14 @@ def replay():
 print('Welcome to my Tic Tac Toe game!')
 
 while True:
+
+	#Prepare the empty board
 	board = [' ']*10
 
+	#Player 1 chooses the marker
 	player1_marker,player2_marker = player_input()
+
+	#Which player will go first randomly
 	player = choose_first()
 	print(player + ' will go first')
 
@@ -78,7 +85,7 @@ while True:
 	else:
 		game_on = False
 
-
+	#Game starts
 	while game_on:
 		if player == 'Player 1':
 			display_board(board)
